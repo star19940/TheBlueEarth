@@ -42,8 +42,28 @@ https://www.jianshu.com/p/ef18c1afa339
 
 提出问题：
 
-addEventListener、on、bind、onClick、each
+addEventListener、on、onClick；bind、each、
 
-addEventListener 主流浏览器、在ie8以上版本使用（可以事件增加，不会移除）
+html事件属性：addEventListener、onClick
+
+jquery方法：on、bind、each
+
+###### addEventListener、on、onClick区别
+
+addEventListener 主流浏览器、在ie8以上版本使用（附加式绑定事件，不会移除）
 
 attchEvent ie8及更早版本
+
+on：附加式绑定事件
+
+onClick：相当于赋值操作。不管写多少次，只绑定一次。
+
+###### on、bind区别
+
+事件冒泡，事件委托，on具有事件委托能力
+
+("ul li").on（"click"，function(){} ）与("ul li").bind（"click"，function(){} ）相同
+
+li标签增加click事件，但是当动态增加li标签时，用这两种方法新增的li标签上没有click事件。
+
+这时候需要("ul").on（"click","li"，function(){} ），为动态dom增加click事件
